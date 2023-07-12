@@ -3,6 +3,7 @@
 use App\Http\Controllers\FrontHomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Back\BackHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,14 @@ Route::prefix('front')->name('front.')->group(function() {
     // Route::view('/login', 'front.auth.login');
     // Route::view('/register', 'front.auth.register');
     // Route::view('/forget-password', 'front.auth.forget-password');
+});
+
+// back design
+Route::prefix('back')->name('back.')->group(function() {
+    Route::get('/', BackHomeController::class)->middleware('admin')->name('index');
+    Route::view('/login', 'back.auth.login');
+    Route::view('/register', 'back.auth.register');
+    Route::view('/forget-password', 'back.auth.forget-password');
 });
 
 
