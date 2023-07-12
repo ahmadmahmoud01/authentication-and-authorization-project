@@ -46,11 +46,11 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    @auth
-                                        <span class="fw-semibold d-block">{{ Auth::user()->name }}</span>
+                                    @auth('admin')
+                                        <span class="fw-semibold d-block">{{ Auth::guard('admin')->user()->name }}</span>
                                         <small class="text-muted">Admin</small>
                                     @endauth
-                                    @guest
+                                    @guest('admin')
                                         <span class="fw-semibold d-block">Guest</span>
                                     @endguest
                                 </div>
@@ -86,7 +86,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <form action="{{ route('logout') }}" method="post">
+                        <form action="{{ route('back.logout') }}" method="post">
                             @csrf
                             <a class="dropdown-item" href="javascript:{}"
                                 onclick="this.closest('form').submit();return false;">

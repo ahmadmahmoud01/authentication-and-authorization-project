@@ -18,7 +18,7 @@
 
 
 
-                        <form id="formAuthentication" class="mb-3" action="{{ route('password.store') }}" method="POST">
+                        <form id="formAuthentication" class="mb-3" action="{{ route('back.password.store') }}" method="POST">
                             @csrf
 
                             <!-- Password Reset Token -->

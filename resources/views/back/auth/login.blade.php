@@ -8,7 +8,7 @@
     <div class="container-xxl">
         <div class="authentication-wrapper authentication-basic container-p-y">
             <div class="authentication-inner">
-                <!-- Register -->
+                <!-- Login -->
                 <div class="card">
                     <div class="card-body">
                         <!-- Logo -->
@@ -20,7 +20,7 @@
                         <!-- Session Status -->
                         <x-auth-session-status class="mb-4" :status="session('status')" />
 
-                        <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
+                        <form id="formAuthentication" class="mb-3" action="{{ route('back.login') }}" method="POST">
                             @csrf
 
                             <div class="mb-3">
@@ -34,7 +34,7 @@
 
                                 <div class="d-flex justify-content-between">
                                     <label class="form-label" for="password">Password</label>
-                                    <a href="{{ route('password.request') }}">
+                                    <a href="{{ route('back.password.request') }}">
                                         <small>Forgot Password?</small>
                                     </a>
                                 </div>
@@ -60,7 +60,7 @@
 
                         <p class="text-center">
                             <span>New on our platform?</span>
-                            <a href="{{ route('register') }}">
+                            <a href="{{ route('back.register') }}">
                                 <span>Create an account</span>
                             </a>
                         </p>
